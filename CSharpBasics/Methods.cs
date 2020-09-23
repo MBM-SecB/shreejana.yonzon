@@ -1,12 +1,21 @@
+using System;
+
 public class MethodTeacher
 {
-    //Simple-method: takes 2 arguments, and returns a value
+    // Simple-method:  takes 2 arguemnts, and returns a value
     public int Multiply(int firstNum, int secondNum)
     {
         int result = firstNum * secondNum;
         return result;
     }
-    //Variable-number of arguments
+
+    // Generic method
+    public void Multiply<T>(T firstNum, T secondNum)
+    {
+
+    }
+
+    // Variable-number of arguments
     public int Multiply(params int[] numbers)
     {
         int product = 1;
@@ -14,18 +23,19 @@ public class MethodTeacher
         {
             product = product * num;
         }
+
         return product;
     }
 
-    //Named arguments
-    internal void PrintCustomerDeatails(string name, byte age, string address, DateTime dob)
-    {   // using string interpolation here:$"{}"
+    // Named-agruments
+    internal void PrintCustomerDetails(string name, byte age, string address, DateTime dob)
+    {
+        // Using string interpolation here: $"{}"
         Console.Write($"Customer Details: {name}, {age}, {address}, {dob}");
-
     }
-    //Returning multipel value
-    //Question: Method which returns max and min value of supplied numbers
 
+    // Returning multiple value
+    // Question1: Method which returns max and min value of supplied numbers
     internal (int, int) FindMinMax(params int[] numbers)
     {
         int min = numbers[0];
@@ -37,14 +47,14 @@ public class MethodTeacher
                 min = num;
             if (num > max)
                 max = num;
-
         }
-        //do something on x
+
         return (min, max);
     }
 
 
 }
+
 public class MethodTester
 {
     void TestMethods()
@@ -52,12 +62,15 @@ public class MethodTester
         MethodTeacher methodTeacher = new MethodTeacher();
         int product = methodTeacher.Multiply(2345, 56483);
 
-        product = methodTeacher.Multiply(344, 45676, 233, 577);
-        product = methodTeacher.Multiply(2333, 456778, 23993, 577);
+        methodTeacher.Multiply<decimal>(234.54m, 345678.234566m);
 
-        methodTeacher.PrintCustomerDeatails(dob: DateTime.Now, name: "Shree", age: 22, address: "Boudha");
-        (int Min, int Max) result = methodTeacher.FindMinMax(2, 3, 4, 5, 6, 7, 8, 9, 32, 333);
+        product = methodTeacher.Multiply(344, 56767, 233, 55667);
+        product = methodTeacher.Multiply(344, 56767, 233, 55667, 345, 123, 45);
+
+        methodTeacher.PrintCustomerDetails(dob: DateTime.Now, name: "Shree", age: 21, address: "Boudha");
+
+        (int Min, int Max) result = methodTeacher.FindMinMax(2, 3, 4, 5, 6, 12, 34, 23, 45, 67, 445, 32);
+
         Console.WriteLine($"Minimum: {result.Min}, Maximum: {result.Max}");
-
     }
 }

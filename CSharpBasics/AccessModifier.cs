@@ -1,8 +1,8 @@
-using System;
 class AccessModifier
 {
     internal int x = 90;
-    float y = 214.5f;
+    float y = 234.5f;
+
     private void DoSomething()
     {
 
@@ -11,11 +11,7 @@ class AccessModifier
     {
         DoSomething();
     }
-    private void DoSomething()
-    {
-
-    }
-    internal void DoAnotherThing()
+    public void DoYetAnotherThing()
     {
         DoSomething();
     }

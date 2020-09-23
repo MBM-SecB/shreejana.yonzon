@@ -1,13 +1,9 @@
 ﻿using System;
 class Program
 {
-    static void Main1()
+    static void Main()
     {
-        string GetName()
-        {
-            //kei kam garnu hunxa
-            return "something";
-        }
+        FileIO file = new FileIO();
+        file.LearnDirectory();
     }
-
 }
