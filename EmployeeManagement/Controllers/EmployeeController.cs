@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 
 public class EmployeeController : Controller
@@ -6,9 +6,6 @@ public class EmployeeController : Controller
     public ActionResult Index()
     {
         var employees = Employee.GetEmployees();
-        return View(employees);
-
-
         return View(employees);
     }
     public ActionResult Detail(string firstName)
