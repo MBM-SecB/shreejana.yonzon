@@ -1,24 +1,26 @@
 using System;
-public class MethodSum
+class Compare
 {
-    public int CompareSum()
+    static void main222()
     {
-        int firstNum = 250, secondNum = 100;
-        int add = firstNum + secondNum;
-        if (add >= 500)
+        Compare pp = new Compare();
+        pp.CompareTwoNumbers();
+    }
+
+    void CompareTwoNumbers()
+    {
+        int a = 100;
+        int b = 45;
+        int c = a + b;
+        bool k = true;
+        bool l = false;
+        if (c >= 500)
         {
-            Console.WriteLine("TRUE");
+            Console.WriteLine(k);
         }
         else
         {
-            Console.WriteLine("FALSE");
+            Console.WriteLine(l);
         }
     }
-
-    static void Main55()
-    {
-        MethodSum s = new MethodSum();
-        s.CompareSum();
-    }
-
 }

@@ -4,9 +4,10 @@ namespace Assignments
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello World!");
+            CreateDirectory file = new CreateDirectory();
+            file.CreateDirectories();
         }
     }
 }
